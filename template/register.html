@@ -1,0 +1,29 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<h1>Join the community</h1>
+
+{% for message in messages %}
+    <h5 class="err_msg">{{message}}</h5>
+{% endfor %}
+
+<form action="register" method="POST">
+
+{% csrf_token %}
+
+<label>Username</label><br>
+<input type="text" name="username"><br><br>
+
+<label>Email</label><br>
+<input type="text" name="email"><br><br>
+
+<label>Password</label><br>
+<input type="password" name="password"><br><br>
+
+<label>Confirm Password</label><br>
+<input type="password" name="password2"><br><br>
+
+<input type="submit" value="submit">
+
+</form>
